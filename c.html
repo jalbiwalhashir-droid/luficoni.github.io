@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Choose Us | Lufi Coni Talent Hunt</title>
+  <style>
+    /* ---------------- RESET & BASE ---------------- */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { background:#0e0e0f; color:white; overflow-x:hidden; }
+    a { text-decoration:none; color:inherit; }
+
+    /* ---------------- HEADER / NAV ---------------- */
+    header {
+      width:100%;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background: rgba(15,15,15,0.45);
+      backdrop-filter: blur(12px);
+      position:fixed;
+      top:0;
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+    .logo {
+      font-size:28px;
+      font-weight:800;
+      background:linear-gradient(90deg,#ff4d6d,#ffa600);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    nav {
+      display:flex;
+      align-items:center;
+      gap:25px;
+    }
+
+    nav a {
+      font-size:16px;
+      font-weight:500;
+      cursor:default;
+      transition:0.3s;
+    }
+    nav a:hover { color:#ff4d6d; }
+
+    /* HAMBURGER */
+    .hamburger {
+      display:none;
+      flex-direction:column;
+      gap:4px;
+      cursor:pointer;
+      background:transparent;
+      padding:6px;
+      border-radius:6px;
+    }
+    .hamburger span {
+      width:18px;
+      height:2px;
+      background:white;
+      border-radius:2px;
+    }
+
+    /* CLOSE BUTTON */
+    .close-btn {
+      display:none;
+      align-self:flex-end;
+      font-size:20px;
+      cursor:pointer;
+      color:white;
+      margin-bottom:10px;
+    }
+
+    /* ---------------- SECTIONS ---------------- */
+    .section { padding:150px 60px 100px; }
+    .section h2 {
+      font-size:42px; font-weight:900; text-align:center; margin-bottom:20px;
+      background:linear-gradient(90deg,#ff4d6d,#ffa600);
+      -webkit-background-clip:text; color:transparent;
+    }
+    .section p {
+      text-align:center; max-width:780px; margin:0 auto 60px;
+      font-size:18px; line-height:1.6; color:#dcdcdc;
+    }
+
+    /* BOXES */
+    .box-row {
+      display:flex; justify-content:center; flex-wrap:wrap; gap:25px;
+    }
+    .box {
+      flex:1; min-width:250px; padding:35px 25px;
+      background: rgba(255,255,255,0.06);
+      border-radius:20px; border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(12px);
+      transition:0.35s; box-shadow:0 0 20px rgba(0,0,0,0.45);
+      text-align:center;
+    }
+    .box:hover { transform:translateY(-10px); border-color:#ff4d6d; }
+    .box h3 {
+      font-size:22px; margin-bottom:10px; font-weight:700;
+      background:linear-gradient(45deg,#ff4d6d,#ffa600);
+      -webkit-background-clip:text; color:transparent;
+    }
+    .box p { font-size:15px; color:#dcdcdc; line-height:1.6; }
+
+    /* ---------------- RESPONSIVE ---------------- */
+    @media(max-width:900px) {
+      header { padding:15px 25px; }
+      nav {
+        display:none; flex-direction:column; position:absolute;
+        top:60px; right:15px; width:180px; background: rgba(0,0,0,0.95);
+        border-radius:10px; padding:15px; gap:10px;
+      }
+      nav.show { display:flex; }
+      nav a { margin:5px 0; font-size:16px; }
+      .close-btn { display:block; }
+
+      .hamburger {
+        display:flex; width:22px; padding:4px; gap:3px;
+      }
+      .hamburger span { width:22px; height:2px; }
+
+      .section { padding:120px 25px 80px; }
+      .box-row { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Lufi Coni</div>
+
+    <!-- NAV LINKS -->
+    <nav id="menu">
+      <div class="close-btn" onclick="toggleMenu()">✕</div>
+      <a href="a.html">Home</a>
+      <a href="b.html">Our Packages</a>
+      <a href="c.html">Why Choose Us</a>
+      <a href="d.html">Contact Us</a>
+    </nav>
+
+    <!-- HAMBURGER -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- MAIN SECTIONS -->
+  <section class="section">
+    <h2>Our Fee Structure</h2>
+    <p>
+      We provide flexible installment options for all our plans so every creator can start their YouTube journey without stress. Choose any package — Basic, Medium, or Premium — and pay in <strong>easy installments</strong> while you watch real progress on your channel.
+    </p>
+    <div class="box-row">
+      <div class="box">
+        <h3>Flexible Installments</h3>
+        <p>Pay in 2 or 3 simple installments instead of a full upfront payment. Start your growth journey today with zero pressure.</p>
+      </div>
+      <div class="box">
+        <h3>No Hidden Charges</h3>
+        <p>Every package is transparent and clear. No surprise costs — ever.</p>
+      </div>
+      <div class="box">
+        <h3>Pay After Progress</h3>
+        <p>For higher plans, pay the next installment only after seeing real channel growth and performance improvements.</p>
+      </div>
+      <div class="box">
+        <h3>100% Transparency</h3>
+        <p>You receive regular updates about your channel setup, SEO progress, and subscriber/watch-hour growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Our Work</h2>
+    <p>
+      Lufi Coni Talent Hunt works with creators all around the world — helping new channels grow from zero to monetization using real, organic methods.
+    </p>
+    <div class="box-row">
+      <div class="box">
+        <h3>Creators Worldwide</h3>
+        <p>Students and creators from USA, UK, Canada, India, Pakistan, UAE, Australia, Germany & many more countries trust our professional systems.</p>
+      </div>
+      <div class="box">
+        <h3>Real Organic Growth</h3>
+        <p>No bots, no fake traffic — only real strategies like SEO, retention planning, niche optimization, keyword mapping, thumbnails, and content polish.</p>
+      </div>
+      <div class="box">
+        <h3>Monetization Experts</h3>
+        <p>We have helped multiple clients achieve <strong>1000+ subscribers, 4000+ watch hours, and full monetization</strong>.</p>
+      </div>
+      <div class="box">
+        <h3>Professional Tools</h3>
+        <p>We use advanced analytics tools, research systems, and creator support techniques used by top YouTubers globally.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why Creators Trust Us</h2>
+    <p>
+      Trust is earned — and creators trust Lufi Coni because we deliver results with honesty, commitment, and long-term support.
+    </p>
+    <div class="box-row">
+      <div class="box">
+        <h3>Experienced Team</h3>
+        <p>Our team has managed and optimized hundreds of channels in different niches.</p>
+      </div>
+      <div class="box">
+        <h3>Global Support</h3>
+        <p>We work with clients from around the world and understand different audience behaviors and trends.</p>
+      </div>
+      <div class="box">
+        <h3>Fast Response & Guidance</h3>
+        <p>Our fast support ensures you grow without confusion or delay.</p>
+      </div>
+      <div class="box">
+        <h3>Zero Risk</h3>
+        <p>Our installment system ensures you only continue when you're happy with the results.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------------- JS ---------------- -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>

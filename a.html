@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lufi Coni Talent Hunt | YouTube Growth Specialist</title>
+<style>
+  /* ---------------- RESET & BASE ---------------- */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+  body { background:#0e0e0f; color:white; overflow-x:hidden; }
+  a { text-decoration:none; color:inherit; }
+
+  /* ---------------- HEADER ---------------- */
+  header {
+    width: 100%;
+    padding: 20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background: rgba(15,15,15,0.45);
+    backdrop-filter: blur(12px);
+    position:fixed;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .logo {
+    font-size:28px;
+    font-weight:800;
+    letter-spacing:1px;
+    background: linear-gradient(90deg, #ff4d6d, #ffa600);
+    -webkit-background-clip: text;
+    color: transparent;
+    max-width: 70vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ---------------- NAVIGATION ---------------- */
+  nav { display:flex; align-items:center; }
+  nav a {
+    margin-left:25px;
+    font-weight:500;
+    font-size:16px;
+    transition:0.3s;
+    cursor:pointer;
+  }
+  nav a:hover { color:#ff4d6d; }
+
+  /* ---------------- HAMBURGER ---------------- */
+  .hamburger {
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:5px;
+    order:-1;
+    z-index:1001;
+  }
+  .hamburger span {
+    width:25px; height:3px;
+    background:white;
+    border-radius:2px;
+  }
+
+  /* ---------------- HERO ---------------- */
+  .hero {
+    width:100%;
+    min-height:100vh;
+    padding:160px 60px 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:relative;
+  }
+  .hero::before,
+  .hero::after {
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    filter:blur(130px);
+    z-index:-1;
+  }
+  .hero::before { background:#ff4d6d; top:-50px; left:-150px; }
+  .hero::after { background:#ffa600; bottom:-80px; right:-120px; }
+
+  .hero-text { max-width:600px; }
+  .hero-text h1 { font-size:60px; font-weight:900; line-height:1.15; animation:slideFade 1.2s ease forwards; }
+  .hero-text p { margin-top:20px; font-size:20px; line-height:1.7; color:#cfcfcf; animation:fadeIn 1.6s ease forwards; }
+
+  .cta { margin-top:35px; }
+  .cta a {
+    padding:14px 38px; border-radius:50px; font-size:17px; font-weight:600;
+    margin-right:15px; display:inline-block; transition:0.3s;
+  }
+  .cta .wa { background:#25d366; color:#000; }
+  .cta .insta { background: linear-gradient(45deg,#ff0066,#ffcc00); color:#000; }
+  .cta a:hover { transform:translateY(-4px) scale(1.03); }
+
+  .hero-card {
+    width:440px; padding:40px; border-radius:25px;
+    background: rgba(255,255,255,0.08); backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.15);
+    box-shadow:0 0 25px rgba(0,0,0,0.5); animation:fadeIn 2s ease;
+    margin-top:30px;
+  }
+  .hero-card h3 { font-size:24px; margin-bottom:15px; color:#ff4d6d; }
+  .hero-card p { font-size:16px; color:#dcdcdc; line-height:1.6; }
+
+  .features { padding:100px 60px; }
+  .features h2 {
+    text-align:center; font-size:40px; font-weight:800; margin-bottom:60px;
+    background: linear-gradient(90deg,#ff4d6d,#ffa600);
+    -webkit-background-clip:text; color:transparent;
+  }
+  .feature-box { display:flex; justify-content:space-between; gap:35px; flex-wrap:wrap; }
+  .feature {
+    width:30%; min-width:280px; padding:35px;
+    background: rgba(255,255,255,0.06);
+    border-radius:20px; border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px); transition:0.4s;
+  }
+  .feature:hover { transform:translateY(-10px); border-color:#ff4d6d; }
+  .feature h3 { font-size:22px; margin-bottom:12px; color:#ff4d6d; }
+  .feature p { font-size:16px; color:#dcdcdc; line-height:1.6; }
+
+  @keyframes fadeIn { from {opacity:0;} to{opacity:1;} }
+  @keyframes slideFade {0%{opacity:0; transform:translateY(-40px);}100%{opacity:1; transform:translateY(0);} }
+
+  /* ---------------- MOBILE ---------------- */
+  @media(max-width:900px){
+    header {
+      padding:15px 10px;
+      justify-content:flex-start;
+      gap:10px;
+    }
+    .hamburger { display:flex; }
+
+    .logo {
+      font-size:20px;
+      max-width: calc(100% - 50px); /* leave space for hamburger */
+      white-space: nowrap;
+    }
+
+    nav {
+      position:fixed;
+      top:60px;
+      left:-200px;
+      width:180px;
+      background: rgba(0,0,0,0.85);
+      flex-direction: column;
+      padding: 20px;
+      border-radius:10px;
+      transition:0.3s ease;
+      z-index:1000;
+    }
+    nav.show { left:10px; }
+    nav a { margin:15px 0; font-size:16px; }
+
+    .hero { padding:130px 15px 60px; flex-direction:column; text-align:center; }
+    .hero-card { width:100%; max-width:440px; margin-top:40px; }
+    .feature { width:100%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="logo">Lufi Coni</div>
+  <nav id="menu">
+    <a href="a.html" onclick="closeMenu()">Home</a>
+    <a href="b.html" onclick="closeMenu()">Our Packages</a>
+    <a href="c.html" onclick="closeMenu()">Why Choose Us</a>
+    <a href="d.html" onclick="closeMenu()">Contact Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Grow Your YouTube Channel.<br>Become a Top Creator.</h1>
+    <p>Lufi Coni Talent Hunt provides creators with expert mentorship to grow their YouTube channels. Receive personal guidance, strategic insights, and hands-on support to increase your subscribers, views, and revenue.</p>
+    <p>Start from zero or enhance your existing channel. With proven strategies, feedback, and motivation, your growth is our priority.</p>
+    <div class="cta">
+      <a href="https://wa.me/14234327619" target="_blank" class="wa">WhatsApp</a>
+      <a href="https://www.instagram.com/luffyconi?igsh=MTdjMGFrdTAxazE3cw==" target="_blank" class="insta">Instagram</a>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <h3>🔥 Why Choose Lufi Coni Talent Hunt?</h3>
+    <p>Complete channel guidance, including audits, SEO tips, content planning, thumbnail strategy, and continuous mentorship. Proven methods designed for sustainable growth and monetization success.</p>
+  </div>
+</section>
+
+<section class="features">
+  <h2>What I Offer</h2>
+  <div class="feature-box">
+    <div class="feature"><h3>1️⃣ Personalized Mentorship</h3><p>Customized guidance to help your channel grow efficiently and strategically.</p></div>
+    <div class="feature"><h3>2️⃣ Channel Analysis</h3><p>Comprehensive review of your content, audience, and branding.</p></div>
+    <div class="feature"><h3>3️⃣ Growth Strategies</h3><p>Proven methods to increase subscribers, views, and engagement.</p></div>
+    <div class="feature"><h3>4️⃣ Content Planning</h3><p>Insights on video ideas, trends, and publishing schedule for maximum impact.</p></div>
+    <div class="feature"><h3>5️⃣ Monetization Guidance</h3><p>Tips and strategies to start earning through your content efficiently.</p></div>
+    <div class="feature"><h3>6️⃣ Thumbnail & Branding</h3><p>Create attractive thumbnails and maintain consistent channel branding.</p></div>
+  </div>
+</section>
+
+<script>
+  const menu = document.getElementById('menu');
+  function toggleMenu(){ menu.classList.toggle('show'); }
+  function closeMenu(){ menu.classList.remove('show'); }
+
+  document.addEventListener('click', function(e){
+    if(!menu.contains(e.target) && !document.querySelector('.hamburger').contains(e.target)){
+      closeMenu();
+    }
+  });
+</script>
+
+</body>
+</html>

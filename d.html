@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Lufi Coni Talent Hunt</title>
+<style>
+/* ---------------- RESET & BASE ---------------- */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0e0e0f;color:white;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+/* ---------------- HEADER / NAV ---------------- */
+header{
+  width:100%;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background: rgba(15,15,15,0.45);
+  backdrop-filter: blur(12px);
+  position:fixed;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.logo{
+  font-size:28px;font-weight:800;
+  background:linear-gradient(90deg,#ff4d6d,#ffa600);
+  -webkit-background-clip:text;color:transparent;
+}
+
+/* NAV LINKS */
+nav{
+  display:flex;align-items:center;gap:25px;
+}
+nav a{
+  font-size:16px;font-weight:500;transition:0.3s;
+}
+nav a:hover{color:#ff4d6d}
+nav a.active{color:#ff4d6d}
+
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+.hamburger span{
+  width:25px;height:3px;background:white;border-radius:2px;
+}
+
+/* CLOSE BUTTON */
+.close-btn{
+  display:none;align-self:flex-end;font-size:22px;cursor:pointer;color:white;margin-bottom:10px;
+}
+
+/* ---------------- CONTACT SECTION ---------------- */
+.section{padding:150px 60px 100px;display:flex;flex-direction:column;align-items:center;}
+.section h2{
+  font-size:42px;font-weight:900;margin-bottom:20px;
+  background:linear-gradient(90deg,#ff4d6d,#ffa600);
+  -webkit-background-clip:text;color:transparent;
+}
+.section p{
+  text-align:center;font-size:18px;max-width:760px;margin-bottom:50px;color:#dcdcdc;line-height:1.6;
+}
+
+/* CONTACT BOX */
+.contact-box{display:flex;gap:40px;width:100%;max-width:1000px;flex-wrap:wrap;}
+.contact-info{
+  flex:1;min-width:280px;padding:35px;
+  background:rgba(255,255,255,0.06);
+  border-radius:20px;backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 20px rgba(0,0,0,0.45);
+}
+.contact-info h3{font-size:24px;margin-bottom:20px;}
+.contact-info .info-line{margin-bottom:20px;}
+.contact-info .info-line span{font-weight:600;color:#ff4d6d;}
+.socials{margin-top:20px;display:flex;gap:15px;}
+.socials a{padding:12px 22px;border-radius:50px;color:white;font-weight:600;transition:0.3s;text-decoration:none;}
+.socials a.whatsapp{background:#25D366;}
+.socials a.instagram{background:#E1306C;}
+.socials a:hover{transform:translateY(-3px) scale(1.05);}
+
+.contact-form{
+  flex:1.4;min-width:320px;padding:35px;
+  background:rgba(255,255,255,0.06);
+  border-radius:20px;backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 0 20px rgba(0,0,0,0.45);
+}
+.contact-form label{font-size:15px;color:#e2e2e2;margin-bottom:6px;display:block;}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:14px;margin-bottom:20px;border:none;border-radius:12px;outline:none;
+  background:rgba(255,255,255,0.08);color:white;font-size:15px;
+}
+.contact-form textarea{height:130px;resize:none;}
+.contact-form button{
+  width:100%;padding:15px;background:linear-gradient(90deg,#ff4d6d,#ffa600);
+  border:none;border-radius:12px;color:white;font-size:17px;font-weight:600;cursor:pointer;
+  transition:0.3s;
+}
+.contact-form button:hover{opacity:0.85;transform:translateY(-3px);}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width:900px){
+  header{padding:15px 25px;}
+  
+  /* MOBILE MENU */
+  nav{
+    display:none;flex-direction:column;position:absolute;top:60px;right:15px;width:180px;
+    background:rgba(0,0,0,0.95);border-radius:10px;padding:15px;gap:10px;
+  }
+  nav.show{display:flex;}
+  nav a{margin:5px 0;font-size:16px;}
+  
+  .hamburger{display:flex;}
+  .close-btn{display:block;}
+
+  .section{padding:120px 25px 80px;}
+  .contact-box{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Lufi Coni</div>
+
+  <!-- NAV LINKS -->
+  <nav id="menu">
+    <div class="close-btn" onclick="toggleMenu()">✕</div>
+    <a href="a.html">Home</a>
+    <a href="b.html">Our Packages</a>
+    <a href="c.html">Why Choose Us</a>
+    <a href="d.html" class="active">Contact Us</a>
+  </nav>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <h2>Contact Us</h2>
+  <p>Have questions? Want to start your YouTube growth journey? Reach out to us — our team is available 24/7 to help you succeed.</p>
+
+  <div class="contact-box">
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <div class="info-line"><span>Email:</span> support@luficoni.com</div>
+      <div class="info-line"><span>WhatsApp:</span> +1 (423) 432-7619</div>
+      <div class="info-line"><span>Office Hours:</span> 24/7 Online Support</div>
+
+      <h3>Socials</h3>
+      <div class="socials">
+        <a href="https://wa.me/14234327619" target="_blank" class="whatsapp">WhatsApp</a>
+        <a href="https://www.instagram.com/luffyconi?igsh=MTdjMGFrdTAxazE3cw==" target="_blank" class="instagram">Instagram</a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form>
+        <label>Your Name</label>
+        <input type="text" placeholder="Enter your full name">
+        <label>Your Email</label>
+        <input type="email" placeholder="Enter your email">
+        <label>Your Message</label>
+        <textarea placeholder="Write your message..."></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SCRIPT -->
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
